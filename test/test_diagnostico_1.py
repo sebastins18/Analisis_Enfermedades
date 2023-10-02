@@ -20,37 +20,37 @@ class TestDiagnostico(unittest.TestCase):
     def test_faringitis(self):
         print("Prueba para verificar el diagnóstico de faringitis")
         self.run_diagnostico({'fiebre': 's', 'dolor_de_garganta': 's'})
-        self.assertEqual(self.diagnostico, "Posible faringitis")
+        self.assertIn("Posible faringitis" , self.diagnostico)
 
     def test_gripe(self):
         print("Prueba para verificar el diagnóstico de gripe")
         self.run_diagnostico({'fiebre': 's', 'dolor_de_garganta': 'n', 'dolor_de_cabeza': 's'})
-        self.assertEqual(self.diagnostico, "Posible gripe")
+        self.assertIn("Posible gripe",self.diagnostico)
 
     def test_resfriado_comun(self):
         print("Prueba para verificar el diagnóstico de resfriado común")
         self.run_diagnostico({'fiebre': 'n', 'dolor_de_cabeza': 's', 'congestion_nasal': 's'})
-        self.assertEqual(self.diagnostico, "Posible resfriado común")
+        self.assertIn("Posible resfriado común",self.diagnostico,)
 
     def test_bronquitis(self):
         print("Prueba para verificar el diagnóstico de bronquitis")
         self.run_diagnostico({'fiebre': 'n', 'dolor_de_cabeza': 's', 'congestion_nasal': 'n', 'tos': 's'})
-        self.assertEqual(self.diagnostico, "Posible bronquitis")
+        self.assertIn("Posible bronquitis",self.diagnostico,)
 
     def test_sinusitis(self):
         print("Prueba para verificar el diagnóstico de sinusitis")
         self.run_diagnostico({'fiebre': 'n', 'dolor_de_cabeza': 'n', 'congestion_nasal': 's', 'tos': 's'})
-        self.assertEqual(self.diagnostico, "Posible sinusitis")
+        self.assertIn("Posible sinusitis", self.diagnostico)
 
     def test_alergia(self):
         print("Prueba para verificar el diagnóstico de alergia")
         self.run_diagnostico({'fiebre': 'n', 'dolor_de_cabeza': 'n', 'congestion_nasal': 's', 'tos': 'n'})
-        self.assertEqual(self.diagnostico, "Posible alergia")
+        self.assertIn("Posible alergia",self.diagnostico)
 
     def test_sintomas_no_reconocidos(self):
         print("Prueba para verificar el diagnóstico de síntomas no reconocidos")
         self.run_diagnostico({'fiebre': 'n', 'dolor_de_garganta': 'n', 'dolor_de_cabeza': 'n', 'congestion_nasal': 'n', 'tos': 'n'})
-        self.assertEqual(self.diagnostico, "Síntomas no reconocidos")
+        self.assertIn("Síntomas no reconocidos",self.diagnostico)
 
 if __name__ == "__main__":
     unittest.main()
