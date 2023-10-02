@@ -102,7 +102,7 @@ Este proyecto incluye una suite de pruebas diseñada para validar la lógica y f
 
 ### Usando unittest
 
-1. **Ejecuta las pruebas con `unittest` para `test_diagnostico_2.py`:**
+1. **Ejecuta las pruebas con `unittest` para `test_diagnostico_1.py`:**
     ```bash
     python -m unittest discover test
     ```
