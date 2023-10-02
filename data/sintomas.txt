@@ -1,0 +1,5 @@
+fiebre
+dolor_de_garganta
+dolor_de_cabeza
+congestion_nasal
+tos
